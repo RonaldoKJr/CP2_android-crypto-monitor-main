@@ -154,7 +154,7 @@ O projeto Crypto Monitor é uma aplicação em Kotlin, que usa uma API para pode
             }
         }
         
-    <!--Integra o uso da tipografia e esquemas de cor e ao tema-->
+    <!--Integra o uso da tipografia e esquemas de cor ao tema-->
     
     MaterialTheme(
         colorScheme = colorScheme,
