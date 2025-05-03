@@ -4,7 +4,7 @@ O projeto Crypto Monitor é uma aplicação em Kotlin, que usa uma API para pode
 
 ## Explicação do código:
 
-AndroidManifest.xml
+### AndroidManifest.xml
 
   <!--Instancia a permissão do uso da internet-->
   <uses-permission android:name="android.permission.INTERNET" />
@@ -38,7 +38,7 @@ AndroidManifest.xml
         </activity>
     </application>
 
-TicketResponse.kt
+### TicketResponse.kt
 
 <!--Criar um "ticker da classe Ticker"-->
 <!--O ticker receberá os valores direto da API-->
@@ -56,7 +56,7 @@ class Ticker(
     val date: Long
 ) 
 
-MercadoBitcoinServiceFctory.kt
+### MercadoBitcoinServiceFctory.kt
 
 <!--Configura o RetroFit para chamar a API-->
 fun create(): MercadoBitcoinService {
@@ -67,7 +67,7 @@ fun create(): MercadoBitcoinService {
             return retrofit.create(MercadoBitcoinService::class.java)
   }
 
-  MercadoBitcoinService.kt
+### MercadoBitcoinService.kt
 
 <!--Define o endpoint da API, transformando a API HTTP em uma interface utilizando RetroFit-->
 interface MercadoBitcoinService {  
@@ -75,7 +75,7 @@ interface MercadoBitcoinService {
     suspend fun getTicker(): Response<TickerResponse>  
 } 
 
-Color.kt
+### Color.kt
 <!--Instancia algumas cores personalizdas-->
 val Purple80 = Color(0xFFD0BCFF)
 val PurpleGrey80 = Color(0xFFCCC2DC)
@@ -84,7 +84,7 @@ val Purple40 = Color(0xFF6650a4)
 val PurpleGrey40 = Color(0xFF625b71)
 val Pink40 = Color(0xFF7D5260)
 
-Theme.kt
+### Theme.kt
 
 <!--Define os esquemas de cor dos temas -->
 private val DarkColorScheme = darkColorScheme(
@@ -131,7 +131,7 @@ MaterialTheme(
         content = content
     )
 
-Type.kt
+### Type.kt
 
 <!--Define a tipografia, ou seja, coisas relacionadas ao texto, como tamanho, espaçamento, tipo e "intensidade"-->
 val Typography = Typography(
@@ -144,7 +144,7 @@ val Typography = Typography(
     )
   )
 
-MainActivity.kt
+### MainActivity.kt
 
 <!--Cria a activity e verifica chamas os .xml responsáveis pelo layout-->
 class MainActivity : AppCompatActivity() {
@@ -218,7 +218,7 @@ class MainActivity : AppCompatActivity() {
 <!--activity_main.xml, component_button_refresh.xml, component_quote_information.xml e component_toolbar_main.xml definem altura, largura, posição na tela, tamanho e estilo de textos, cor de background e enter outros elementos, dentro do seu próprio layout.-->
 
 <!--activity_main é relacionado a posição dos itens na tela-->
-activity_main.xml
+### activity_main.xml
 
 <include
         android:id="@+id/component_toolbar"
@@ -234,7 +234,7 @@ activity_main.xml
         android:layout_weight="1" />
 
 <!--component_button_refresh é relacionado ao botão utilizado para atualizar as informações na tela-->
-component_button_refresh.xml
+### component_button_refresh.xml
 
 <Button
         android:id="@+id/btn_refresh"
@@ -248,7 +248,7 @@ component_button_refresh.xml
         android:textColor="@color/white" />
 
 <!--component_quote_information é relacionado ao texto em display na tela-->
-component_quote_information.xml
+### component_quote_information.xml
 
         <!--O texto utilizado está contido na variável "label_rate"-->
   <TextView
@@ -278,7 +278,7 @@ component_quote_information.xml
         android:layout_height="wrap_content" />
 
 <!--component_toolbar_main é relacionado ao local da interface onde o cabeçalho será mostrado-->
-component_toolbar_main.xml
+### component_toolbar_main.xml
 
 <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_main"
@@ -290,7 +290,7 @@ component_toolbar_main.xml
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
 <!--colors.xml armazena as cores selecionadas-->
-colors.xml
+### colors.xml
 
 ```python
 <resources>
@@ -307,7 +307,8 @@ colors.xml
 ```
 
 <!--strings.xml armazena as strings que fazem parte do display de informações-->
-strings.xml
+### strings.xml
+
     <string name="app_name">kotlin-android-crypto-monitor</string>
     <string name="app_title">Monitor de Crypto Moedas - BITCOIN</string>
     <string name="label_rate">Cotação - BITCOIN</string>
